@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auto - Tactics CLI", "Auto - Tactics CLI\Auto - Tactics CLI.csproj", "{BBA2AC08-C606-45A4-B574-506953EF7FBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBA2AC08-C606-45A4-B574-506953EF7FBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA2AC08-C606-45A4-B574-506953EF7FBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBA2AC08-C606-45A4-B574-506953EF7FBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBA2AC08-C606-45A4-B574-506953EF7FBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
