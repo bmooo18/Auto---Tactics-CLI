@@ -1,21 +1,27 @@
 public class Unit
 {
-    public string Name;
-    public int Health;
-    public int Damage;
-    
-    // El constructor recibe los valores iniciales y los guarda en los campos.
-    // El orden no importa, pero por convencion
-    public Unit(string name, int health, int damage)
+    // Se asignan una sola vez, en el constructor.
+    public string Name { get; }
+    public int MaxHealth { get; }
+    public int Damage { get; }
+
+    // Cualquiera puede leer la vida, pero solo la clase puede cambiarla.
+    public int Health { get; private set; }
+
+    // Propiedad calculada: se evalúa cada vez que se consulta.
+    public bool IsAlive => Health > 0;
+
+    public Unit(string name, int maxHealth, int damage)
     {
         Name = name;
-        Health = health;
+        MaxHealth = maxHealth;
+        Health = maxHealth;
         Damage = damage;
     }
-    
-    // La unidad pierde tanta vida como el daño recibido.
+
     public void TakeDamage(int amount)
     {
-        Health -= amount; // Health = Health - amount
+        // La vida nunca baja de 0.
+        Health = Math.Max(Health - amount, 0);
     }
 }
