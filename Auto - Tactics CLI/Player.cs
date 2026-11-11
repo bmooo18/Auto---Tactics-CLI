@@ -1,7 +1,16 @@
 public class Player
 {
+    private const int ArmyCapacity = 3;
     public int Gold { get; private set; }
 
+    public Army Army { get; }
+ 
+    public Player()
+    {
+        Gold = 0;
+        Army = new Army(ArmyCapacity);
+    }
+    
     public bool TrySpend(int amount)
     {
         if (Gold < amount)
@@ -9,7 +18,7 @@ public class Player
             return false;
         }
 
-        Gold = Gold - amount;
+        Gold -= amount;
         return true;
     }
     
