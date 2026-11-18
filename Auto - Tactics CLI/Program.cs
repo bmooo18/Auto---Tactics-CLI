@@ -114,6 +114,9 @@ foreach (var u in aliveUnits)
 
 //______________________________________________________
 
+
+/* Cuarta parte
+
 ConsoleView view = new ConsoleView();
 List<Army> waves = new WaveData().CreateWaves();
  
@@ -130,3 +133,24 @@ for (int i = 0; i < 4; i++)
     BattleEvent battleEvent = battle.NextTurn();
     view.ShowTurn(battle, battleEvent);
 }
+
+*/
+
+ConsoleView view = new ConsoleView();
+List<Army> waves = new WaveData().CreateWaves();
+
+Player player = new Player();
+player.Army.TryAdd(new Unit("Guerrero", 12, 4, 1));
+player.Army.TryAdd(new Unit("Arquero", 6, 2, 1));
+
+// waves[0] es la oleada 1: la lista empieza en 0.
+Battle battle = new Battle(player.Army, waves[1]);
+view.ShowMessage("Combate contra la oleada 2");
+
+while (battle.PlayerWon)
+{
+    BattleEvent battleEvent = battle.NextTurn();
+    view.ShowTurn(battle, battleEvent);
+}
+
+view.ShowResult(battle);
