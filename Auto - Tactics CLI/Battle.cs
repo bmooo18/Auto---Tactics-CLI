@@ -19,7 +19,7 @@ public class Battle
     
     public bool IsOver => PlayerArmy.IsDefeated || EnemyArmy.IsDefeated;
 
-    public bool PlayerWon => !EnemyArmy.IsDefeated;
+    public bool PlayerWon => EnemyArmy.IsDefeated && !PlayerArmy.IsDefeated;
 
     public int SurvivorCount => EnemyArmy.GetAliveUnits().Count ;
  

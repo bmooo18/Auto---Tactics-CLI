@@ -147,7 +147,7 @@ player.Army.TryAdd(new Unit("Arquero", 6, 2, 1));
 Battle battle = new Battle(player.Army, waves[1]);
 view.ShowMessage("Combate contra la oleada 2");
 
-while (battle.PlayerWon)
+while (!battle.IsOver)
 {
     BattleEvent battleEvent = battle.NextTurn();
     view.ShowTurn(battle, battleEvent);
